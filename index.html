@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anh Q. Chau</title>
+<meta name="description" content="Anh Q. Chau — Economics, Information Science &amp; Data Science at UW–Madison. Portfolio, experience, and projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f7;
+    --surface: #ffffff;
+    --ink: #1a1c22;
+    --muted: #5c6070;
+    --line: #e7e4de;
+    --accent: #4338ca;
+    --accent-soft: #eef0fb;
+    --radius: 14px;
+    --maxw: 860px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16171b;
+      --surface: #1e2026;
+      --ink: #f2f1ee;
+      --muted: #a2a6b3;
+      --line: #2c2f37;
+      --accent: #a5b4fc;
+      --accent-soft: #23243a;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--maxw); margin: 0 auto; padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.05rem; text-decoration: none; color: var(--ink); }
+  .nav-links { display: flex; gap: 22px; }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color .15s; }
+  .nav-links a:hover { color: var(--accent); }
+  @media (max-width: 640px) { .nav-links { display: none; } }
+
+  /* Hero */
+  header.hero { padding: 84px 0 56px; }
+  .eyebrow { color: var(--accent); font-weight: 600; font-size: 0.85rem; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 14px; }
+  h1 { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 18px; }
+  .lede { font-size: 1.15rem; color: var(--muted); max-width: 620px; }
+  .lede strong { color: var(--ink); font-weight: 600; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 10px 18px; border-radius: 999px; font-size: 0.92rem; font-weight: 600;
+    text-decoration: none; transition: transform .12s, background .15s, border-color .15s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--accent); color: #fff; }
+  @media (prefers-color-scheme: dark) { .btn-primary { color: #16171b; } }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Sections */
+  section { padding: 48px 0; border-top: 1px solid var(--line); }
+  .section-label { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 28px; }
+  .about p { font-size: 1.08rem; color: var(--ink); margin-bottom: 16px; max-width: 640px; }
+  .about p:last-child { margin-bottom: 0; }
+
+  /* Timeline / roles */
+  .role { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .role:last-child { border-bottom: none; }
+  .role-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px; }
+  .role-title { font-weight: 600; font-size: 1.05rem; }
+  .role-org { color: var(--accent); font-weight: 600; }
+  .role-meta { color: var(--muted); font-size: 0.88rem; white-space: nowrap; }
+  .role-desc { color: var(--muted); font-size: 0.98rem; margin-top: 4px; max-width: 620px; }
+
+  /* Project cards */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 22px; transition: transform .14s, box-shadow .14s, border-color .14s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px -12px rgba(0,0,0,.18); border-color: var(--accent); }
+  .card h3 { font-size: 1.08rem; font-weight: 600; margin-bottom: 6px; }
+  .card .tag { display: inline-block; background: var(--accent-soft); color: var(--accent); font-size: 0.74rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; margin-bottom: 12px; letter-spacing: .02em; }
+  .card p { color: var(--muted); font-size: 0.95rem; }
+
+  /* Skills */
+  .skill-group { margin-bottom: 22px; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-group h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 10px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; font-size: 0.9rem; font-weight: 500; }
+
+  /* Contact */
+  .contact-box { background: var(--accent-soft); border-radius: var(--radius); padding: 32px; text-align: center; }
+  .contact-box h3 { font-family: 'Fraunces', serif; font-size: 1.4rem; margin-bottom: 8px; }
+  .contact-box p { color: var(--muted); margin-bottom: 20px; }
+
+  footer { padding: 40px 0 60px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="brand">Anh Q. Chau</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
+
+  <header class="hero">
+    <div class="eyebrow">UW–Madison · Class of 2028</div>
+    <h1>Anh Q. Chau</h1>
+    <p class="lede">I study <strong>Economics, Information Science, and Data Science</strong> at the University of Wisconsin–Madison, and I like working where data meets product — turning messy questions into decisions people can actually use.</p>
+    <div class="cta">
+      <a href="mailto:qchau@wisc.edu" class="btn btn-primary">Email me</a>
+      <a href="https://linkedin.com/in/anhqchau" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+      <!-- Upload your resume PDF to the repo as resume.pdf, then this button will work -->
+      <a href="resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Résumé</a>
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <div class="section-label">About</div>
+    <p>I'm a triple major building fluency across economics, information science, and data science — three angles on the same habit of asking what the numbers are really saying. That mix is what pulls me toward product: understanding users, framing the problem, and using data to figure out what to build next.</p>
+    <p>I've worked across US and Vietnamese professional settings, from advisory and innovation internships in Ho Chi Minh City to consulting and leadership roles on campus. I'm a native Vietnamese speaker and fluent in English, and I move comfortably between both contexts.</p>
+    <p>When I'm not in a spreadsheet or a slide deck, you'll usually find me oil painting.</p>
+  </section>
+
+  <section id="experience">
+    <div class="section-label">Experience</div>
+
+    <div class="role">
+      <div class="role-top">
+        <span class="role-title"><span class="role-org">VinaCapital</span> — Business Solutions Intern</span>
+        <span class="role-meta">Ho Chi Minh City · Jun–Aug 2026</span>
+      </div>
+      <!-- Edit this line to describe what you built / delivered -->
+      <p class="role-desc">Data science work on investor redemption modeling and product presentation for the firm's open-end funds.</p>
+    </div>
+
+    <div class="role">
+      <div class="role-top">
+        <span class="role-title"><span class="role-org">Rajah &amp; Tann LCT Lawyers</span> — Innovation Intern</span>
+        <span class="role-meta">Ho Chi Minh City · Mar 2026–Present</span>
+      </div>
+      <p class="role-desc">Supporting AI implementation and tooling for a leading Vietnamese law firm — evaluating tools and helping shape a pilot rollout.</p>
+    </div>
+
+    <div class="role">
+      <div class="role-top">
+        <span class="role-title"><span class="role-org">Grant Thornton Vietnam</span> — Advisory Services Intern</span>
+        <span class="role-meta">Jul–Aug 2025</span>
+      </div>
+      <p class="role-desc">Advisory work supporting client engagements across the firm's services practice.</p>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <div class="section-label">Leadership &amp; Involvement</div>
+
+    <div class="role">
+      <div class="role-top">
+        <span class="role-title"><span class="role-org">Women in Business Technology</span> — Vice President</span>
+        <span class="role-meta">UW–Madison · Jan 2026–Present</span>
+      </div>
+      <p class="role-desc">Leading programming and professional opportunities for undergraduate women in tech and business.</p>
+    </div>
+
+    <div class="role">
+      <div class="role-top">
+        <span class="role-title"><span class="role-org">Badger Consulting</span> — Analyst</span>
+        <span class="role-meta">UW–Madison · Sept 2025–Present</span>
+      </div>
+      <p class="role-desc">Selected analyst working on client-facing consulting projects with a student team.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-label">Projects &amp; Case Competitions</div>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">Top 6 Nationally · AI Innovation Award</span>
+        <h3>Spotify Free-to-Premium Strategy</h3>
+        <p>VCC / Viet Career Guide Think-A-Thon 2026 — an AI-driven conversion strategy for moving Spotify free users to Premium. Recognized in the national top six and awarded the AI Innovation Award.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Case Competition · 2026</span>
+        <h3>Church Mutual Insurance Case</h3>
+        <p>Team case challenge addressing a strategic problem for Church Mutual Insurance.</p>
+        <!-- Add a sentence on your recommendation or result if you'd like -->
+      </div>
+      <!-- Copy a card block above to add more projects (a data analysis, a class project, etc.) -->
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-label">Skills</div>
+
+    <div class="skill-group">
+      <h4>Programming &amp; Data</h4>
+      <div class="chips">
+        <span class="chip">Python (pandas, NumPy, SciPy)</span>
+        <span class="chip">R</span>
+        <span class="chip">SQL</span>
+        <span class="chip">Excel</span>
+        <span class="chip">Google Sheets</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h4>Quantitative Methods</h4>
+      <div class="chips">
+        <span class="chip">Econometrics</span>
+        <span class="chip">Hypothesis testing</span>
+        <span class="chip">Causal inference (PSM)</span>
+        <span class="chip">Time-series backtesting</span>
+        <span class="chip">Survey analysis</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h4>Other</h4>
+      <div class="chips">
+        <span class="chip">LLM prompt engineering</span>
+        <span class="chip">Vietnamese (native)</span>
+        <span class="chip">English (fluent)</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-box">
+      <h3>Let's connect</h3>
+      <p>Open to product and tech-focused opportunities, and always happy to chat.</p>
+      <div class="cta" style="justify-content:center;">
+        <a href="mailto:qchau@wisc.edu" class="btn btn-primary">qchau@wisc.edu</a>
+        <a href="https://linkedin.com/in/anhqchau" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Anh Q. Chau · Built with plain HTML/CSS, hosted on GitHub Pages
+  </footer>
+
+</div>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
