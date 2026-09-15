@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anh Q. Chau</title>
-<meta name="description" content="Anh Chau — Economics, Information Science &amp; Data Science at UW–Madison. Portfolio, experience, and projects.">
+<meta name="description" content="Anh Q. Chau — Economics, Information Science &amp; Data Science at UW–Madison. Portfolio, experience, and projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
@@ -76,7 +76,7 @@
     background: var(--bg-soft); border: 1px solid var(--line);
     display: flex; align-items: center; justify-content: center;
   }
-  .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(12%) contrast(1.02); }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; display: block; filter: grayscale(12%) contrast(1.02); }
   .portrait-fallback { display: none; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--faint); letter-spacing: .04em; }
   .portrait--empty .portrait-fallback { display: block; }
 
@@ -177,7 +177,7 @@
   </header>
 
   <section class="intro" id="about" style="border-top:none; padding-top:0;">
-    <div class="portrait portrait--empty">
+    <div class="portrait">
       <!-- Add a photo named photo.jpg to your repo and it'll appear here. Until then, your initials show. -->
       <img src="photo.jpg" alt="Anh Q. Chau" onerror="this.style.display='none'; this.parentElement.classList.add('portrait--empty');">
       <span class="portrait-fallback">AC</span>
