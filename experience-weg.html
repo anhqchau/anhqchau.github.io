@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wisconsin Experience Grant · Case Study · Anh Q. Chau</title>
+<meta name="description" content="Redesigning a legacy university grant application system to bridge administrative compliance and student usability.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="wrap" id="top">
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">Anh Q. Chau</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="about.html">About</a>
+          <a href="experience.html" class="active">Experience</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-social">
+          <a href="https://linkedin.com/in/anhqchau" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a href="https://github.com/anhqchau" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+          <a href="mailto:qchau@wisc.edu" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <span class="page-eyebrow">Case Study · Wisconsin Experience Grant · 2025–Present</span>
+    <h1 class="page-title serif">A grant application no student could find the submit button on.</h1>
+  </header>
+
+  <div class="case-body">
+    <div class="case-meta">
+      <div><strong>Role</strong>Grant Coordinator</div>
+      <div><strong>Institution</strong>UW–Madison</div>
+      <div><strong>Timeline</strong>2025–Present</div>
+      <div><strong>Users</strong>Undergraduate applicants + administrative reviewers</div>
+    </div>
+
+    <p class="lead">The Wisconsin Experience Grant funds student projects that would otherwise never get off the ground. It's a good program buried inside a bad interface. Coordinating the grant put me on both sides of a broken system: the students who couldn't figure out how to apply, and the administrators who couldn't accept applications submitted the "wrong" way.</p>
+    <p class="lead">This is the case study of quietly turning that from a coordination role into a full product overhaul.</p>
+
+    <h2 class="serif">Problem</h2>
+    <p>The grant's application system had been built years earlier by educators who understood the grant's compliance requirements but had no product or design background. The site's information architecture reflected the org chart of the department that built it, not the workflow a student needed to complete an application. The result:</p>
+    <ul>
+      <li><strong>Unfindable actions.</strong> The submit button lived three clicks deep, on a page students had no obvious reason to navigate to.</li>
+      <li><strong>Instruction-and-form mismatch.</strong> Instructions on one page named fields that appeared under different labels on the actual form.</li>
+      <li><strong>No status feedback.</strong> After submitting, applicants had no way to confirm the application had been received, let alone track its status.</li>
+      <li><strong>Compliance-first language.</strong> Every field label was written for an auditor, not for a first-year student trying to fund their research.</li>
+    </ul>
+    <p>The measurable consequence: <em>[TODO: high dropout rate — fill in specific % of started-but-abandoned applications]</em>, plus an admin queue clogged with support emails from confused applicants. The grant was under-subscribed relative to eligible students, and the ones who did apply were not necessarily the strongest candidates. They were the ones patient enough to figure out the interface.</p>
+
+    <h2 class="serif">User &amp; Business Needs</h2>
+    <ul>
+      <li><strong>Students needed</strong> to complete the application in one sitting, understand what was being asked of them in language they recognized, and know it had been received.</li>
+      <li><strong>Administrators needed</strong> the resulting application data to still map exactly to the compliance schema required by the grant's funders. Every field the auditor asks about has to be there, in the right format.</li>
+      <li><strong>The program owner needed</strong> a higher-quality applicant pool without extending review timelines or increasing admin workload per application.</li>
+    </ul>
+    <p>The two user groups pulled in opposite directions on every single interface decision. That was the interesting part.</p>
+
+    <h2 class="serif">Approach &amp; Execution</h2>
+
+    <h3>Discovery</h3>
+    <p>Two weeks of unstructured research before I proposed anything:</p>
+    <ul>
+      <li>Shadowed <em>[TODO: N]</em> students filling out the old form. Watched where they hovered, where they backed out, where they gave up and emailed for help.</li>
+      <li>Interviewed the admin team about which compliance requirements were actually load-bearing (audit-critical) versus inherited-and-never-questioned (safe to challenge). Roughly half were the second.</li>
+      <li>Pulled two years of support email logs and coded them by root cause. The top three categories accounted for ~70% of confusion, and all three were interface problems, not policy problems.</li>
+    </ul>
+
+    <h3>Design principles I set before touching the layout</h3>
+    <ol style="margin: 0 0 20px 22px;">
+      <li style="margin-bottom: 10px;"><strong>The student's language sits on top; the compliance language sits underneath.</strong> Every field has a plain-English label the student sees, and an auditor-facing field name the system stores.</li>
+      <li style="margin-bottom: 10px;"><strong>One thing per page.</strong> The old form asked for everything on one intimidating screen. The new one breaks it into a progressive flow where each screen has a single, clear ask.</li>
+      <li style="margin-bottom: 10px;"><strong>Never move the submit button.</strong> It lives in the same place on every page, disabled until valid, enabled when ready. No hunting.</li>
+      <li><strong>Status is a right, not a feature.</strong> Every applicant sees where their application is in the queue.</li>
+    </ol>
+
+    <h3>Execution</h3>
+    <p>I redesigned the flow end to end: new information architecture, rewritten field labels, a progressive multi-step form replacing the wall-of-fields, a status page for applicants, and a compliance-mapping layer that translated student-facing fields back into the admin schema on submit. Where I couldn't rebuild backend systems, I put the improved UX in a well-designed wrapper that fed the legacy system correctly.</p>
+    <p>I worked closely with the admin team to make sure not a single audit-required data point was lost in translation. Every proposed change went through a "would the auditor still be happy" test before it shipped.</p>
+
+    <h2 class="serif">Trade-offs &amp; Constraints</h2>
+    <ul>
+      <li><strong>Redesign vs. rebuild.</strong> A full rebuild wasn't in scope or budget. I chose a wrapper approach — improved UX layered over the existing backend — which meant living with some backend quirks in exchange for a shippable timeline.</li>
+      <li><strong>Speed vs. politics.</strong> The administrators who built the original system were still on the team. Every change I proposed had to be framed as "here's what students are telling us" rather than "here's what's broken," or the trust collapsed. This was maybe the hardest part of the project.</li>
+      <li><strong>Universal design vs. edge cases.</strong> A handful of eligible applicants had accessibility needs the old system quietly failed on. Fixing them added scope but reframed the whole project — accessibility became the design floor, not an afterthought.</li>
+    </ul>
+
+    <h2 class="serif">Impact</h2>
+    <div class="case-metric-row">
+      <div class="case-metric"><span class="num">[TODO]%</span><span class="lbl">Reduction in application dropout rate after launch</span></div>
+      <div class="case-metric"><span class="num">[TODO]%</span><span class="lbl">Drop in support email volume, freeing admin capacity</span></div>
+      <div class="case-metric"><span class="num">1</span><span class="lbl">Full compliance mapping preserved — zero audit-required fields lost</span></div>
+    </div>
+    <p><em>Note to self: fill in the real numbers once you have them. Even rough before/after figures on applications-submitted or completion-rate would land here. If applicant pool quality improved (measured by review scores or funded rate), that's the strongest possible line.</em></p>
+
+    <h2 class="serif">What I took away</h2>
+    <p>This was the first project where I understood in my body what "product management" actually is when there is no PM title, budget, or mandate. The role of coordinator gave me proximity to both users and admins; the rest was noticing what was broken and being willing to redesign a system I hadn't been asked to redesign.</p>
+    <p>The specific lesson: <strong>compliance-first design isn't a fixed constraint, it's a negotiation.</strong> The instinct in university and enterprise contexts is to treat every rule as immovable. Half of what I got permission to change had been immovable only because no one had asked. The other half genuinely couldn't move, and the design had to bend around it.</p>
+    <p>I keep this project on the portfolio and off the resume for a reason — the recruiting playbook says space is finite and you lead with what's most legible to a screener. But when a hiring manager asks for a PM story where I saw a broken product and rebuilt it end to end, this is the one.</p>
+
+    <a href="experience.html" class="back-link">All experience</a>
+  </div>
+
+  <footer class="site-foot">
+    <span>© <span id="year"></span> Anh Q. Chau</span>
+    <span>Built with HTML &amp; CSS · Hosted on GitHub Pages</span>
+  </footer>
+
+</div>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

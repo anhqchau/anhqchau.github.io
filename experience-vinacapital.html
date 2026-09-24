@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VinaCapital · Case Study · Anh Q. Chau</title>
+<meta name="description" content="Two projects at VinaCapital: a Financial Health feature for the MiO investor app, and an investor redemption behavior model in Python.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="wrap" id="top">
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">Anh Q. Chau</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="about.html">About</a>
+          <a href="experience.html" class="active">Experience</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-social">
+          <a href="https://linkedin.com/in/anhqchau" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a href="https://github.com/anhqchau" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+          <a href="mailto:qchau@wisc.edu" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <span class="page-eyebrow">Case Study · VinaCapital · Summer 2026</span>
+    <h1 class="page-title serif">Two ways into one product: designing what investors see, and modeling what they'll do next.</h1>
+  </header>
+
+  <div class="case-body">
+    <div class="case-meta">
+      <div><strong>Role</strong>Business Solutions Intern</div>
+      <div><strong>Team</strong>MiO App + Retail Product</div>
+      <div><strong>Timeline</strong>Jun–Aug 2026 (12 weeks)</div>
+      <div><strong>Stack</strong>Python (pandas, SciPy, scikit-learn), Figma, SQL</div>
+    </div>
+
+    <p class="lead">VinaCapital is one of Vietnam's largest asset managers, and MiO is their consumer investment app. I split the summer between two projects that turned out to be the same question from different angles: how do we help retail investors make better decisions with money they can't afford to be wrong about?</p>
+
+    <h2 class="serif">Project 1 — MiO Financial Health Feature</h2>
+
+    <h3>Problem</h3>
+    <p>MiO's retail investors were being onboarded into fund products without any framing for whether they should be investing in the first place. New users would buy in during market rallies, redeem during dips, and churn out with a bad taste. The app was doing its transactional job, but not the harder one: helping people understand where a given investment fit in their broader financial life.</p>
+    <p>The business problem was tied to the user problem. Users who redeemed early became detractors, and detractor cohorts had roughly <em>[TODO: fill in retention gap]</em> lower LTV. Product wanted a feature that could improve financial decision quality without turning the app into a lecture.</p>
+
+    <h3>User &amp; Business Needs</h3>
+    <ul>
+      <li><strong>Users needed</strong> a way to gut-check "should I be investing this money?" that respected their intelligence, not a wall of educational content they'd swipe past.</li>
+      <li><strong>The business needed</strong> a feature that measurably improved retention on high-risk cohorts (first 90 days, first-time investors) without lengthening the funnel enough to hurt conversion.</li>
+      <li><strong>Compliance needed</strong> anything showing "health" language to avoid implying professional financial advice — a real constraint in Vietnamese fintech.</li>
+    </ul>
+
+    <h3>Approach &amp; Execution</h3>
+    <p>I ran discovery in three loops. First, I mapped the existing onboarding funnel and pulled cohort data on where drop-offs and early redemptions clustered. Second, I ran informal user conversations with <em>[TODO: N]</em> retail investors across two age brackets to hear how they actually thought about money before opening the app. Third, I benchmarked six regional fintech apps (Grab Finance, MoMo, Timo, TPBank Savi, and two Thai apps) for how they framed similar concepts.</p>
+    <p>The insight that reshaped the feature: users didn't want a "score." A score felt judgmental and static. What they wanted was a <em>prompt</em> — a small, honest question at the moment they were about to invest, like "Do you have three months of expenses set aside?" that they could answer once and stop seeing.</p>
+    <p>I scoped down from an ambitious dashboard concept to a lightweight interstitial: three questions, answered on first investment, reflected as a soft banner on the portfolio page. The banner surfaced concrete next steps ("consider building an emergency fund first") but never blocked the transaction — users retained full agency, and compliance stayed clean because the app made no recommendations.</p>
+
+    <h3>Trade-offs &amp; Constraints</h3>
+    <ul>
+      <li><strong>Depth vs. friction.</strong> A real financial health assessment would have needed 12+ questions to be useful. Every added question dropped completion 8–12% in prior onboarding tests. Three was the ceiling that kept completion above <em>[TODO: %]</em>.</li>
+      <li><strong>Advice vs. compliance.</strong> Anything phrased as recommendation created regulatory risk. I rewrote every string in the feature to be observational, not prescriptive. "Users like you often…" not "You should…"</li>
+      <li><strong>Localization.</strong> The Vietnamese cultural context around discussing personal finance is different from what most Western fintech playbooks assume. Prompts had to feel like a knowledgeable friend, not an American budgeting app.</li>
+    </ul>
+
+    <h3>Impact</h3>
+    <div class="case-metric-row">
+      <div class="case-metric"><span class="num">[TODO]</span><span class="lbl">Feature scoped, prototyped, and greenlit for engineering handoff</span></div>
+      <div class="case-metric"><span class="num">3</span><span class="lbl">Onboarding questions in shipped scope (down from proposed 12)</span></div>
+      <div class="case-metric"><span class="num">6</span><span class="lbl">Regional fintech apps benchmarked to inform framing</span></div>
+    </div>
+    <p><em>Note to self: fill in the specific outcome metric here once the feature ships and A/B results come in. Even a directional read on completion rate and post-onboarding retention would land hard for a PM recruiter.</em></p>
+
+    <h2 class="serif" style="margin-top: 80px;">Project 2 — Investor Redemption Behavior Prediction</h2>
+
+    <h3>Problem</h3>
+    <p>Open-end fund managers at VinaCapital were consistently surprised by monthly redemption volumes. When outflows spiked, the funds had to sell holdings at bad prices to cover them, which dragged returns and cost the firm real money. The internal forecasting was a rolling average, which broke down every time market conditions changed — which was constantly.</p>
+    <p>The ask was straightforward: can we predict retail redemption rates for the next month more accurately than the current baseline, using transaction data we already have?</p>
+
+    <h3>User &amp; Business Needs</h3>
+    <ul>
+      <li><strong>Fund managers needed</strong> a forward-looking read they could actually plan against — accurate enough to shift portfolio composition preemptively, and interpretable enough to defend to the investment committee.</li>
+      <li><strong>The business needed</strong> to reduce forced selling into weak markets, which had a measurable NAV cost. Even a modest accuracy lift translated to real basis points.</li>
+      <li><strong>Compliance and audit needed</strong> the model to be documented, reproducible, and not a black box.</li>
+    </ul>
+
+    <h3>Approach &amp; Execution</h3>
+    <p>I built the pipeline in Python (pandas, NumPy, SciPy, scikit-learn). The path went roughly:</p>
+    <ul>
+      <li><strong>Data cleaning and framing.</strong> Pulled <em>[TODO: N]</em> months of transaction-level data across the retail investor base. Aggregated to a pooled monthly panel — one row per investor per month — with redemption rate as the target. Handled the messy stuff: multiple share classes, promotional bonus redemptions that shouldn't count, holiday-adjusted trading days.</li>
+      <li><strong>Feature engineering.</strong> The real work. Investor tenure, deposit velocity, drawdown from personal peak NAV, market regime indicators (VN-Index return over trailing 1/3/6 months), seasonality (Tet effects were enormous), and a "surprise" feature that captured deviation from an investor's own baseline behavior.</li>
+      <li><strong>Modeling.</strong> Started with a straightforward panel regression as the interpretable baseline, then benchmarked against gradient-boosted trees. Time-series cross-validation with a walk-forward split — no leakage from future months into the training set, a mistake I caught mid-project that would have inflated accuracy.</li>
+      <li><strong>Delivery.</strong> Not just a model — a monthly forecast document and a short backtest report the fund team could read in five minutes. The model's output was useless if it didn't fit into how they already made decisions.</li>
+    </ul>
+
+    <h3>Trade-offs &amp; Constraints</h3>
+    <ul>
+      <li><strong>Accuracy vs. interpretability.</strong> The boosted model beat the panel regression by roughly <em>[TODO: X]%</em> RMSE, but the regression's coefficients were what the investment committee wanted to see. I ended up shipping both: the regression as the "official" number, the boosted model as a challenger to flag when the two disagreed.</li>
+      <li><strong>Pooled vs. per-fund models.</strong> Per-fund models would have been more accurate, but half the funds had too few investors for a robust fit. I went with a pooled model plus fund-level fixed effects — the version that generalized best without overfitting.</li>
+      <li><strong>Time horizon.</strong> One-month-ahead is easier to predict but too late to act on. Three-month gives the fund team room to reposition but the accuracy drops off. I built both and let managers choose.</li>
+    </ul>
+
+    <h3>Impact</h3>
+    <div class="case-metric-row">
+      <div class="case-metric"><span class="num">[TODO]%</span><span class="lbl">Reduction in forecast RMSE vs. the rolling-average baseline</span></div>
+      <div class="case-metric"><span class="num">[TODO]</span><span class="lbl">Months of backtest showing the model outperforming baseline</span></div>
+      <div class="case-metric"><span class="num">1</span><span class="lbl">Handoff document + pipeline the team runs monthly without me</span></div>
+    </div>
+    <p><em>Note to self: fill in the RMSE improvement and the specific bp of NAV savings estimate once you have the numbers documented. If the model has actually been used for a live monthly cycle by the time this reader lands here, that's the strongest possible line.</em></p>
+
+    <h2 class="serif" style="margin-top: 80px;">What I took away</h2>
+    <p>The two projects looked different on paper — one product design, one modeling. But the through-line was the same: the technical work is only useful when it lands inside how the humans on the other side already make decisions. A feature that's compliant but unused, a model that's accurate but ignored, both fail the same way.</p>
+    <p>The Financial Health feature taught me how much a PM's job is subtraction. Every question we cut made the feature more likely to actually get answered. The redemption model taught me that a good analyst decides which stakeholder gets the answer, in what format, on what cadence — the number is one input into a much bigger delivery problem.</p>
+
+    <a href="experience.html" class="back-link">All experience</a>
+  </div>
+
+  <footer class="site-foot">
+    <span>© <span id="year"></span> Anh Q. Chau</span>
+    <span>Built with HTML &amp; CSS · Hosted on GitHub Pages</span>
+  </footer>
+
+</div>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
